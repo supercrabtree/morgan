@@ -114,6 +114,7 @@ exports = module.exports = function morgan(format, options) {
         debug('skip request')
         return
       }
+      if (res.statusCode === 200 || res.statusCode === 304) return
 
       var line = fmt(exports, req, res)
 
